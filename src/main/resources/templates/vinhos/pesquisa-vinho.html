@@ -6,7 +6,7 @@
       layout:decorate="~{layout/layout-padrao}">
 
 <head>
-    <link rel="stylesheet" type="text/css" th:href="@{/stylesheets/vinhos.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/stylesheets/pesquisa-vinho.css}"/>
 </head>
 <body>
     <section layout:fragment="conteudo">
@@ -47,11 +47,11 @@
                     </thead>
                     <tbody>
                         <tr th:each="vinho : ${vinhos}">
-                            <td th:text="${vinho.codigo}"></td>
+                            <td class="aw-table-vinhos-col-codigo" th:text="${vinho.codigo}"></td>
                             <td><a href="#" th:text="${vinho.nome}"></a></td>
-                            <td th:text="#{|tipoVinho.${vinho.tipo}|}"></td>
-                            <td th:text="|R$ ${{vinho.valor}}|"></td>
-                            <td class="text-center">
+                            <td class="aw-table-vinhos-col-tipo" th:text="#{|tipoVinho.${vinho.tipo}|}"></td>
+                            <td class="aw-table-vinhos-col-valor" th:text="|R$ ${{vinho.valor}}|"></td>
+                            <td class="aw-table-vinhos-col-icons">
                                 <i class="fa fa-trash" style="cursor: pointer;"></i>
                             </td>
                         </tr>
