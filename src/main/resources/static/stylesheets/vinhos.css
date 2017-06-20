@@ -1,0 +1,13 @@
+.aw-table-vinhos-col-codigo, .aw-table-vinhos-col-icons {
+    width: 80px;
+    text-align: center;
+}
+
+.aw-table-vinhos-col-tipo {
+    width: 100px;
+}
+
+.aw-table-vinhos-col-valor {
+    width: 150px;
+    text-align: right;
+}
