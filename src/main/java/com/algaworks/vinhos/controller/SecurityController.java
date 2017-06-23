@@ -1,7 +1,7 @@
 package com.algaworks.vinhos.controller;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SecurityController {
 
 	@RequestMapping("/login")
-	public String login(@AuthenticationPrincipal User user) {
+	public String login(@AuthenticationPrincipal UserDetails user) {
 		if (user != null) {
 			return "redirect:/vinhos";
 		}

@@ -40,7 +40,6 @@ public class VinhosController {
         if (result.hasErrors()) {
             return novo(vinho);
         }
-
         repository.save(vinho);
         attributes.addFlashAttribute("mensagem", "Vinho salvo com sucesso!");
         return new ModelAndView("redirect:/vinhos/novo");
@@ -49,9 +48,8 @@ public class VinhosController {
     @GetMapping
     public ModelAndView pesquisar(VinhoFilter vinhoFilter) {
     	ModelAndView mv = new ModelAndView("vinhos/pesquisa-vinho");
-    	mv.addObject("vinhos", repository.findByNomeContainingIgnoreCase(
-    	        Optional.ofNullable(vinhoFilter.getNome()).orElse("%")));
-
+        String filtro = Optional.ofNullable(vinhoFilter.getNome()).orElse("%");
+        mv.addObject("vinhos", repository.findByNomeContainingIgnoreCase(filtro));
     	return mv;
     }
 
